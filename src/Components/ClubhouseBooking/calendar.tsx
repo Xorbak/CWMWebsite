@@ -13,7 +13,7 @@ import {
 } from "date-fns";
 import { endOfMonth } from "date-fns/esm";
 import format from "date-fns/format";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CalendarDays } from "./calanderDays";
 
 import { DaysOfTheWeek } from "./daysOfTheWeek";
@@ -26,20 +26,23 @@ export interface BookingDetails {
 
 const bookingUrl = "https://krat.es/3a8310ab084b44cb3984/clubhouse";
 
-export const Version2 = () => {
+export const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(new Date());
   const startDate = startOfMonth(currentDate); //clean up
   const endDate = endOfMonth(currentDate); //clean up
 
   const [booking, setBooking] = useState<BookingDetails[]>();
+  const [loadingError, setLoadingError] = useState<boolean>(false);
   useEffect(() => {
     const getBookings = async () => {
       await fetch(bookingUrl)
         .then((res) => res.json())
         .then((result) => {
           setBooking(result);
-        });
+          setLoadingError(false);
+        })
+        .catch(() => setLoadingError(true));
     };
     getBookings();
   });
@@ -59,9 +62,18 @@ export const Version2 = () => {
     setSelectedDay(date);
   };
   return (
-    <Box sx={styles.App}>
+    <Grid item sx={styles.App}>
       <Box>
-        {" "}
+        {loadingError ? (
+          <Typography variant="subtitle2">
+            Something went wrong, try again later
+          </Typography>
+        ) : (
+          !booking && (
+            <Typography variant="subtitle2">Loading Dates....</Typography>
+          )
+        )}
+        <Typography variant="h5">Availability</Typography>{" "}
         <Button
           onClick={() => {
             setCurrentDate(new Date());
@@ -70,9 +82,6 @@ export const Version2 = () => {
         >
           Today
         </Button>
-        {!booking && (
-          <Typography variant="subtitle2">Loading Dates....</Typography>
-        )}
       </Box>
 
       <Grid
@@ -80,17 +89,11 @@ export const Version2 = () => {
         container
         direction="row"
         alignItems="center"
-        justifyContent="space-between"
-        justifyItems="space-between"
-        justifySelf="space-between"
-        alignContent="space-between"
-        alignSelf="space-between"
         sx={{
           backgroundColor: "background.paper",
-          width: "300px",
 
           overflow: "hidden",
-
+          width: "300px",
           borderRadius: "5px",
           border: "0.5px solid",
 
@@ -114,7 +117,7 @@ export const Version2 = () => {
           setSelectedDay={setSelectedDay}
         />
       </Grid>
-    </Box>
+    </Grid>
   );
 };
 
@@ -125,8 +128,9 @@ export const styles = {
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
+    position: "sticky",
     alignItems: "center",
-    justifyContent: { sm: "center", md: "center" },
+    justifyContent: "start", //{ sm: "center", md: "center" },
     fontSize: "calc(10px + 2vmin)",
   },
 };

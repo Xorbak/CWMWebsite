@@ -5,7 +5,7 @@ import { differenceInDays, endOfMonth } from "date-fns";
 import setDate from "date-fns/setDate";
 import startOfMonth from "date-fns/startOfMonth";
 import React, { useEffect, useState } from "react";
-import { BookingDetails } from "./version2";
+import { BookingDetails } from "./calendar";
 
 const isSameDate = (day: Date, bookedDay: Date) =>
   day.getDate() == bookedDay.getDate() &&

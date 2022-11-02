@@ -7,8 +7,7 @@ import { Rules } from "./Components/Rules/Rules";
 import { Faq } from "./Components/FAQ/Faq";
 import Navbar from "./Components/Navbar/Navbar";
 import { theme } from "./Themes/Themes";
-
-import { ClubhouseBookings } from "./Components/ClubhouseBooking/clubhouseBooking";
+import { ClubhouseBookings } from "./Components/ClubhouseBooking/ClubhouseBooking";
 
 function App() {
   return (
