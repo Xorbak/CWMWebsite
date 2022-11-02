@@ -81,7 +81,10 @@ export const Header = ({
             height: "30px",
           }}
         >
-          {format(currentDate, "LLLL yyyy")}
+          {format(
+            currentDate,
+            window.innerWidth <= 600 ? "LLL yyyy" : "LLLL yyyy"
+          )}
         </Typography>
       </Grid>
       <Grid xs={1} item>

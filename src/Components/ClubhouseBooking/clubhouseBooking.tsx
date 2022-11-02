@@ -14,16 +14,16 @@ export const ClubhouseBookings = () => {
   return (
     <Box sx={GlobalStyles.App}>
       <Typography
-        sx={{ marginBottom: "50px", marginTop: "100px" }}
+        sx={{ marginBottom: "50px", marginTop: { xs: "0px", md: "60px" } }}
         variant="h3"
       >
         Carlswald manor Clubhouse
       </Typography>
       <Grid container xs={12} justifyContent="center">
-        <Grid item xs={5}>
+        <Grid item xs={11} lg={6} xl={11}>
           <BookingDetails />
         </Grid>
-        <Grid alignSelf={"center"} item xs={3} position="sticky">
+        <Grid item xs={12} lg={4} xl={12}>
           <Calendar />
         </Grid>
       </Grid>

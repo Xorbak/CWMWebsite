@@ -73,7 +73,9 @@ export const Calendar = () => {
             <Typography variant="subtitle2">Loading Dates....</Typography>
           )
         )}
-        <Typography variant="h5">Availability</Typography>{" "}
+        <Typography variant="h5" sx={{ display: { xs: "none", lg: "flex" } }}>
+          Availability
+        </Typography>{" "}
         <Button
           onClick={() => {
             setCurrentDate(new Date());
@@ -93,7 +95,8 @@ export const Calendar = () => {
           backgroundColor: "background.paper",
 
           overflow: "hidden",
-          width: "300px",
+          width: { xs: "250px", sm: "300px", lg: "400px" },
+
           borderRadius: "5px",
           border: "0.5px solid",
 

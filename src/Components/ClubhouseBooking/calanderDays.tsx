@@ -46,7 +46,7 @@ export const CalendarDays = ({
                 borderRight: "1px solid",
                 borderColor: "primary.dark",
                 textAlign: "center",
-                height: "30px",
+                height: { xs: "30px", lg: "40px" },
               }}
             ></Typography>
           </Grid>
@@ -84,7 +84,7 @@ export const CalendarDays = ({
               }}
               container
             >
-              <Grid xs={9}>
+              <Grid xs={8}>
                 <Typography
                   onClick={() => {
                     chooseDay(index + 1);
@@ -95,13 +95,13 @@ export const CalendarDays = ({
                     display: "flex",
 
                     textAlign: "center",
-                    height: "30px",
+                    height: { xs: "30px", lg: "40px" },
                   }}
                 >
                   {index + 1}
                 </Typography>
               </Grid>{" "}
-              <Grid xs={3}>
+              <Grid xs={4}>
                 <Box
                   sx={{
                     height: "10px",
@@ -129,8 +129,7 @@ export const CalendarDays = ({
                 borderRight: "1px solid",
                 borderColor: "primary.dark",
                 textAlign: "center",
-
-                height: "30px",
+                height: { xs: "30px", lg: "40px" },
               }}
             ></Typography>
           </Grid>

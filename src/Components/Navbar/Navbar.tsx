@@ -29,97 +29,93 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position="sticky">
-      <Box boxShadow={5} width="100%">
-        <Container sx={{ backgroundColor: "background.default" }} maxWidth="xl">
-          <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-              >
-                <MenuIcon />
-              </IconButton>
-              <Menu //small screen
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  display: { xs: "flex", md: "none" },
-                }}
-              >
-                {navArr.map(
-                  (
-                    { location, label } //smaller screens
-                  ) => (
-                    <NavLink
-                      style={{
-                        textDecoration: "none",
-                      }}
-                      to={location}
-                    >
-                      <MenuItem onClick={handleCloseNavMenu}>{label}</MenuItem>
-                    </NavLink>
-                  )
-                )}
-              </Menu>
-            </Box>
-
-            <Box
+      <Container sx={{ backgroundColor: "background.default" }} maxWidth="xl">
+        <Toolbar disableGutters>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu //small screen
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "left",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                flexGrow: 1,
-                display: { xs: "none", md: "flex" },
-                justifyContent: "space-between",
-                width: "60%",
+                display: { xs: "flex", md: "none" },
               }}
             >
-              <Box>
-                <NavLink
-                  style={{
-                    textDecoration: "none",
-                  }}
-                  to="/"
-                >
-                  <MenuItem sx={{ color: "text.primary", fontWeight: "bold" }}>
-                    Carlswald Manor
-                  </MenuItem>
-                </NavLink>
-              </Box>
-              <Box sx={{ display: "flex" }}>
-                {navArr.map(
-                  (
-                    { location, label } //bigger screens
-                  ) => (
-                    <NavLink
-                      style={{
-                        textDecoration: "none",
-                      }}
-                      to={location}
-                    >
-                      <MenuItem sx={{ color: "text.primary" }}>
-                        {label}
-                      </MenuItem>
-                    </NavLink>
-                  )
-                )}
-              </Box>
+              {navArr.map(
+                (
+                  { location, label } //smaller screens
+                ) => (
+                  <NavLink
+                    style={{
+                      textDecoration: "none",
+                    }}
+                    to={location}
+                  >
+                    <MenuItem onClick={handleCloseNavMenu}>{label}</MenuItem>
+                  </NavLink>
+                )
+              )}
+            </Menu>
+          </Box>
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "space-between",
+              width: "60%",
+            }}
+          >
+            <Box>
+              <NavLink
+                style={{
+                  textDecoration: "none",
+                }}
+                to="/"
+              >
+                <MenuItem sx={{ color: "text.primary", fontWeight: "bold" }}>
+                  Carlswald Manor
+                </MenuItem>
+              </NavLink>
             </Box>
-          </Toolbar>
-        </Container>
-      </Box>
+            <Box sx={{ display: "flex" }}>
+              {navArr.map(
+                (
+                  { location, label } //bigger screens
+                ) => (
+                  <NavLink
+                    style={{
+                      textDecoration: "none",
+                    }}
+                    to={location}
+                  >
+                    <MenuItem sx={{ color: "text.primary" }}>{label}</MenuItem>
+                  </NavLink>
+                )
+              )}
+            </Box>
+          </Box>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 };
