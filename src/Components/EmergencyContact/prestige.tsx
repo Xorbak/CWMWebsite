@@ -1,10 +1,18 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { useState } from "react";
 import prestige from "../../images/prestige.png";
 
 export const Prestige = () => {
+  const [showBox, SetShowBox] = useState<boolean>(false);
   return (
-    <Box sx={styles.contactBox}>
+    <Box
+      onClick={() => {
+        SetShowBox(!showBox);
+        console.log(showBox);
+      }}
+      sx={styles.contactBox}
+    >
       <Box
         sx={{
           borderBottom: "1px solid",
@@ -28,15 +36,21 @@ export const Prestige = () => {
           <Typography>
             Contact When: There is a problem with your prepaid meter
           </Typography>
-          <Typography sx={{ marginY: "20px", fontWeight: "bold" }}>
-            Business hours contact
+          <Typography
+            sx={{ display: { xs: !showBox ? "block" : "none", sm: "none" } }}
+            variant="caption"
+          >
+            Tap to open
           </Typography>
-
-          <Box>
-            <Typography>Name: Jeandre Britz</Typography>
-            <Typography>Email: jeandre@prestige-metering.co.za</Typography>
-            <Typography>Number: +27 83 937 0895</Typography>
-            <Box />{" "}
+          <Box sx={{ display: { xs: showBox ? "block" : "none", sm: "none" } }}>
+            <Typography sx={{ marginY: "20px", fontWeight: "bold" }}>
+              Business hours contact
+            </Typography>
+            <Box>
+              <Typography>Name: Jeandre Britz</Typography>
+              <Typography>Email: jeandre@prestige-metering.co.za</Typography>
+              <Typography>Number: +27 83 937 0895</Typography>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -56,11 +70,11 @@ export const Prestige = () => {
 const styles = {
   contactBox: {
     display: "flex",
-    padding: "5px",
+
     flexDirection: "column",
     marginY: "50px",
 
-    minWidth: "500px",
+    width: { xs: "90vw", sm: "60vw" },
     minHeight: "100px",
     backgroundColor: "background.paper",
     borderRadius: "5px",
@@ -73,7 +87,7 @@ const styles = {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     borderRadius: "100px",
-    width: "100px",
-    height: "100px",
+    width: { xs: "50px", md: "100px" },
+    height: { xs: "50px", md: "100px" },
   },
 };
