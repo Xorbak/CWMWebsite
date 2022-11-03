@@ -22,12 +22,19 @@ export const Prestige = () => {
           marginLeft: "20%",
         }}
       />
-      <Box sx={{ display: "flex", flexDirection: "row " }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row ",
+          justifyContent: { xs: "none", lg: "space-evenly" },
+        }}
+      >
         <Box sx={styles.imageContainer} />
         <Box
           sx={{
             textAlign: "start",
             marginLeft: "20px",
+            width: "40%",
             alignSelf: "center",
           }}
         >
@@ -42,7 +49,9 @@ export const Prestige = () => {
           >
             Tap to open
           </Typography>
-          <Box sx={{ display: { xs: showBox ? "block" : "none", sm: "none" } }}>
+          <Box
+            sx={{ display: { xs: showBox ? "block" : "none", sm: "block" } }}
+          >
             <Typography sx={{ marginY: "20px", fontWeight: "bold" }}>
               Business hours contact
             </Typography>
@@ -73,8 +82,7 @@ const styles = {
 
     flexDirection: "column",
     marginY: "50px",
-
-    width: { xs: "90vw", sm: "60vw" },
+    width: { xs: "80vw", sm: "60vw", md: "50vw", lg: "45vw" },
     minHeight: "100px",
     backgroundColor: "background.paper",
     borderRadius: "5px",
