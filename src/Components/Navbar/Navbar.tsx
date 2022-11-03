@@ -66,7 +66,12 @@ const ResponsiveAppBar = () => {
                 }}
                 to="/"
               >
-                <MenuItem onClick={handleCloseNavMenu}>Home</MenuItem>
+                <MenuItem
+                  sx={{ color: "primary.contrastText" }}
+                  onClick={handleCloseNavMenu}
+                >
+                  Home
+                </MenuItem>
               </NavLink>
               {navArr.map(
                 (
@@ -78,7 +83,12 @@ const ResponsiveAppBar = () => {
                     }}
                     to={location}
                   >
-                    <MenuItem onClick={handleCloseNavMenu}>{label}</MenuItem>
+                    <MenuItem
+                      sx={{ color: "primary.contrastText" }}
+                      onClick={handleCloseNavMenu}
+                    >
+                      {label}
+                    </MenuItem>
                   </NavLink>
                 )
               )}
