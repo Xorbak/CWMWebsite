@@ -73,7 +73,7 @@ export const Calendar = () => {
             <Typography variant="subtitle2">Loading Dates....</Typography>
           )
         )}
-        <Typography variant="h5" sx={{ display: { xs: "none", lg: "flex" } }}>
+        <Typography variant="h5" sx={{ display: { xs: "none", lg: "block" } }}>
           Availability
         </Typography>{" "}
         <Button
@@ -128,6 +128,7 @@ export const styles = {
   App: {
     textAlign: "center",
     backgroundColor: "background.default",
+    marginLeft: "2.92%",
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",

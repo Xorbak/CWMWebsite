@@ -20,10 +20,10 @@ export const ClubhouseBookings = () => {
         Carlswald manor Clubhouse
       </Typography>
       <Grid container xs={12} justifyContent="center">
-        <Grid item xs={11} lg={6} xl={11}>
+        <Grid item xs={11} lg={6} xl={10}>
           <BookingDetails />
         </Grid>
-        <Grid item xs={12} lg={4} xl={12}>
+        <Grid item xs={12} lg={4} xl={10}>
           <Calendar />
         </Grid>
       </Grid>

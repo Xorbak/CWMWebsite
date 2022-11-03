@@ -32,7 +32,7 @@ export const GlobalStyles = {
   App: {
     textAlign: "center",
     backgroundColor: "background.default",
-    width: { xs: "100vw" },
+    width: { xs: "100%" },
     minHeight: "100vh",
     display: "flex",
     flexDirection: "column",

@@ -10,27 +10,23 @@ export const Faq = () => {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", lg: "row" },
-          width: "80%",
-          marginTop: "1%",
-          gap: "1%",
+          width: "95%",
+          marginTop: "100px",
         }}
       >
         <Box //imagebox
           sx={{
-            width: { sm: "100%", lg: "50%" },
             borderRadius: "5px",
             backgroundColor: "background.paper",
             minHeight: "300px",
             backgroundImage: `url(${cwmImg})`,
             backgroundAttachment: "fixed",
-            backgroundPosition: { xs: "47% 40%", lg: "200% 30%" },
+            backgroundPosition: "180% 15%",
             backgroundRepeat: "no-repeat",
-            backgroundSize: { xs: "700px", sm: "800px", md: "auto" },
+            backgroundSize: "auto",
           }}
         ></Box>
-        <Box
-          sx={styles.faqBox} //general
-        >
+        <Box sx={styles.faqBox}>
           <Typography variant="h3">General FAQ</Typography>
           <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
             <Typography sx={{ fontWeight: "bold" }}>Q:</Typography> I am moving
@@ -74,7 +70,7 @@ export const Faq = () => {
           />
         </Box>
       </Box>
-      <Box //pet box
+      <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", lg: "row" },
@@ -84,20 +80,6 @@ export const Faq = () => {
         }}
       >
         <Box sx={styles.faqBox}>
-          <Box //imagebox
-            sx={{
-              width: { sm: "100%", lg: "50%" },
-              backgroundColor: "background.paper",
-              display: { xs: "block", lg: "none" },
-              minHeight: "500px",
-              borderRadius: "5px",
-              backgroundImage: `url(${bun})`,
-              backgroundAttachment: "fixed",
-              backgroundPosition: { xs: "60% 70%", sm: "50% 70%" },
-              backgroundRepeat: "no-repeat",
-              backgroundSize: { xs: "700px", sm: "900px" },
-            }}
-          ></Box>
           <Typography variant="h3">Pet FAQ</Typography>
           <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
             <Typography sx={{ fontWeight: "bold" }}>Q:</Typography> Is Carlswald
@@ -122,14 +104,12 @@ export const Faq = () => {
         </Box>
         <Box //imagebox
           sx={{
-            width: { sm: "100%", lg: "50%" },
             backgroundColor: "background.paper",
-            display: { xs: "none", lg: "block" },
             minHeight: "500px",
             borderRadius: "5px",
             backgroundImage: `url(${bun})`,
             backgroundAttachment: "fixed",
-            backgroundPosition: "100% 100%",
+            backgroundPosition: "85% 100%",
             backgroundRepeat: "no-repeat",
             backgroundSize: "auto",
           }}
@@ -146,13 +126,13 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: { sm: "center", md: "start" },
+    justifyContent: { sm: "start", md: "start" },
     fontSize: "calc(10px + 2vmin)",
   },
   faqBox: {
-    width: { sm: "100%", lg: "50%" },
+    width: { xs: "80vw", lg: "50%" },
     backgroundColor: "background.paper",
-    minHeight: "600px",
+    minHeight: "500px",
     borderRadius: "5px",
   },
   faqImageBox: {},
