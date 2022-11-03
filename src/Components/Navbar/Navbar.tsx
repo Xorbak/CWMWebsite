@@ -60,6 +60,14 @@ const ResponsiveAppBar = () => {
                 display: { xs: "flex", md: "none" },
               }}
             >
+              <NavLink
+                style={{
+                  textDecoration: "none",
+                }}
+                to="/"
+              >
+                <MenuItem onClick={handleCloseNavMenu}>Home</MenuItem>
+              </NavLink>
               {navArr.map(
                 (
                   { location, label } //smaller screens

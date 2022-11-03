@@ -10,6 +10,12 @@ export const RuleItem = ({ title, rule }: Props) => {
   return (
     <Box sx={{ marginY: "15px", textAlign: "left" }}>
       <Typography
+        sx={{ display: { xs: "block", md: "none" } }}
+        variant="caption"
+      >
+        Click the index icon for rules
+      </Typography>
+      <Typography
         variant="h4"
         sx={{ paddtinBottom: "15px", textDecoration: "underline" }}
       >
