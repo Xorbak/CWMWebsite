@@ -23,13 +23,20 @@ export const Kalvest = () => {
           marginLeft: "20%",
         }}
       />
-      <Box sx={{ display: "flex", flexDirection: "row " }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row ",
+          justifyContent: { xs: "none", lg: "space-evenly" },
+        }}
+      >
         <Box sx={styles.imageContainer} />
         <Box
           sx={{
             textAlign: "start",
             marginLeft: "20px",
             alignSelf: "center",
+            width: "40%",
           }}
         >
           <Typography variant="h4">Kalvest</Typography>
@@ -79,7 +86,7 @@ const styles = {
 
     flexDirection: "column",
     marginTop: "50px",
-    width: { xs: "90vw", sm: "60vw" },
+    width: { xs: "80vw", sm: "60vw", md: "50vw", lg: "45vw" },
     minHeight: "100px",
     backgroundColor: "background.paper",
     borderRadius: "5px",
