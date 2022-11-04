@@ -26,6 +26,7 @@ export const Rules = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+
   const rules: Rules[] = cwmRules;
   return (
     <Box sx={GlobalStyles.App}>
@@ -89,12 +90,7 @@ export const Rules = () => {
             </Box>
           </Toolbar>
           <Box //index column
-            sx={{
-              display: { xs: "none", md: "block" },
-              borderRight: "1px solid",
-              borderColor: "primary.dark",
-              minHeight: "100%",
-            }}
+            sx={styles.indexBox}
           >
             {ruleTocArr.map((i) => {
               return (
@@ -138,5 +134,11 @@ const styles = {
     flexDirection: "row",
     height: "90%",
     alignItems: { xs: "flex-start" },
+  },
+  indexBox: {
+    display: { xs: "none", md: "block" },
+    borderRight: "1px solid",
+    borderColor: "primary.dark",
+    minHeight: "100%",
   },
 };
