@@ -8,6 +8,7 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
+import { NavItems } from "./navItems";
 
 const navArr = [
   { location: "/emergencyContacts", label: "Emergency Contacts" },
@@ -60,7 +61,7 @@ const ResponsiveAppBar = () => {
                 display: { xs: "flex", md: "none" },
               }}
             >
-              <NavLink
+              <NavLink //this displays on smaller screens and not on 900px and up
                 style={{
                   textDecoration: "none",
                 }}
@@ -73,33 +74,17 @@ const ResponsiveAppBar = () => {
                   Home
                 </MenuItem>
               </NavLink>
-              {navArr.map(
-                (
-                  { location, label } //smaller screens
-                ) => (
-                  <NavLink
-                    style={{
-                      textDecoration: "none",
-                    }}
-                    to={location}
-                  >
-                    <MenuItem
-                      sx={{ color: "primary.contrastText" }}
-                      onClick={handleCloseNavMenu}
-                    >
-                      {label}
-                    </MenuItem>
-                  </NavLink>
-                )
-              )}
+              <NavItems
+                handleCloseNavMenu={handleCloseNavMenu} // links to other pages
+              />
             </Menu>
           </Box>
 
-          <Box
+          <Box // medium(900px) and up this gets rendered
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "space-between",
+              justifyContent: "space-between", // to have the home button and the other items split to opposite sides of the screen
               width: "60%",
             }}
           >
@@ -116,20 +101,7 @@ const ResponsiveAppBar = () => {
               </NavLink>
             </Box>
             <Box sx={{ display: "flex" }}>
-              {navArr.map(
-                (
-                  { location, label } //bigger screens
-                ) => (
-                  <NavLink
-                    style={{
-                      textDecoration: "none",
-                    }}
-                    to={location}
-                  >
-                    <MenuItem sx={{ color: "text.primary" }}>{label}</MenuItem>
-                  </NavLink>
-                )
-              )}
+              <NavItems />
             </Box>
           </Box>
         </Toolbar>
