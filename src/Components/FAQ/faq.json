@@ -1,0 +1,24 @@
+{
+  "General": {
+    "title": "General FAQ",
+    "Q_A": [
+      {
+        "q": "I am moving In/Out what needs to be done?",
+        "a": "When both moving in and out the resident involved needs to fill inthe intent to move form and email it to [person]. Without this form a resident will not be allowed to move in or out. "
+      },
+      {
+        "q": "Something in my unit broke, who is held responsible for fixing it?",
+        "a": "The general rule of thumb is when it is between your four walls its up to the tenant/owner. Anything out side of the 4 walls is considered the Bodycorporate responsibility. If you are still not certain, please contact Trfalgar at +27 12 326 5963"
+      }
+    ]
+  },
+  "Pet": {
+    "title": "Pet FAQ",
+    "Q_A": [
+      {
+        "q": "Is Carlswald Manor Pet friendly?",
+        "a": "The short answer is yes within reason. Large dogs are not allowed for units with no garden and it is up to the resident to care for the animal. All pets need to be registered. See Pets section in rules."
+      }
+    ]
+  }
+}

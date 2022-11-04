@@ -2,137 +2,40 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import bun from "../../images/bun5.jpg";
 import cwmImg from "../../images/cwmImg.jpeg";
+import faq from "./faq.json";
+import { FaqBox } from "./faqBox";
 
 export const Faq = () => {
+  console.log(
+    faq.General.Q_A.map((i) => {
+      return `Q:${i.q} A:${i.a}`;
+    })
+  );
   return (
     <Box sx={styles.App}>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", lg: "row" },
-          width: "80%",
-          marginTop: "1%",
-          gap: "1%",
-        }}
-      >
+      <Box sx={styles.faqContainer}>
         <Box //imagebox
-          sx={{
-            width: { sm: "100%", lg: "50%" },
-            borderRadius: "5px",
-            backgroundColor: "background.paper",
-            minHeight: "300px",
-            backgroundImage: `url(${cwmImg})`,
-            backgroundAttachment: "fixed",
-            backgroundPosition: { xs: "47% 40%", lg: "200% 30%" },
-            backgroundRepeat: "no-repeat",
-            backgroundSize: { xs: "700px", sm: "800px", md: "auto" },
-          }}
+          sx={styles.cwmImgBox}
         ></Box>
         <Box
           sx={styles.faqBox} //general
         >
-          <Typography variant="h3">General FAQ</Typography>
-          <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
-            <Typography sx={{ fontWeight: "bold" }}>Q:</Typography> I am moving
-            In/Out what needs to be done?
-          </Typography>
-          <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
-            <Typography sx={{ fontWeight: "bold" }}>A:</Typography>
-            When both moving in and out the resident involved needs to fill in
-            the intent to move form and email it to [person]. Without this form
-            a resident will not be allowed to move in or out. The form can be
-            downloaded here[link]
-          </Typography>
-          <Box
-            sx={{
-              borderBottom: "1px solid",
-              borderColor: "primary.dark",
-              width: "60%",
-              marginY: "10px",
-              marginLeft: "20%",
-            }}
-          />
-          <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
-            <Typography sx={{ fontWeight: "bold" }}>Q:</Typography> Something in
-            my unit broke, who is held responsible for fixing it?
-          </Typography>
-          <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
-            <Typography sx={{ fontWeight: "bold" }}>A:</Typography>
-            The general rule of thumb is when it is between your four walls its
-            up to the tenant/owner. Anything out side of the 4 walls is
-            considered the Bodycorporate responsibility. If you are still not
-            certain, please contact Trfalgar at[]
-          </Typography>
-          <Box
-            sx={{
-              borderBottom: "1px solid",
-              borderColor: "primary.dark",
-              width: "60%",
-              marginY: "10px",
-              marginLeft: "20%",
-            }}
-          />
+          <FaqBox title={faq.General.title} content={faq.General.Q_A} />
         </Box>
       </Box>
       <Box //pet box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", lg: "row" },
-          width: "80%",
-          marginTop: "1%",
-          gap: "1%",
-        }}
+        sx={styles.faqContainer}
       >
         <Box sx={styles.faqBox}>
-          <Box //imagebox
-            sx={{
-              width: { sm: "100%", lg: "50%" },
-              backgroundColor: "background.paper",
-              display: { xs: "block", lg: "none" },
-              minHeight: "500px",
-              borderRadius: "5px",
-              backgroundImage: `url(${bun})`,
-              backgroundAttachment: "fixed",
-              backgroundPosition: { xs: "60% 70%", sm: "50% 70%" },
-              backgroundRepeat: "no-repeat",
-              backgroundSize: { xs: "700px", sm: "900px" },
-            }}
+          <Box //imagebox for pets
+            display={{ xs: "block", lg: "none" }}
+            sx={styles.petsImgBox}
           ></Box>
-          <Typography variant="h3">Pet FAQ</Typography>
-          <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
-            <Typography sx={{ fontWeight: "bold" }}>Q:</Typography> Is Carlswald
-            Manor Pet friendly?
-          </Typography>
-          <Typography sx={{ textAlign: "left", marginLeft: "10px" }}>
-            <Typography sx={{ fontWeight: "bold" }}>A:</Typography>
-            The short answer is yes within reason. Large dogs are not allowed
-            for units with no garden and it is up to the resident to care for
-            the animal. All pets need to be registered. See Pets section in
-            rules.
-          </Typography>
-          <Box
-            sx={{
-              borderBottom: "1px solid",
-              borderColor: "primary.dark",
-              width: "60%",
-              marginY: "10px",
-              marginLeft: "20%",
-            }}
-          ></Box>
+          <FaqBox title={faq.Pet.title} content={faq.Pet.Q_A} />
         </Box>
         <Box //imagebox
-          sx={{
-            width: { sm: "100%", lg: "50%" },
-            backgroundColor: "background.paper",
-            display: { xs: "none", lg: "block" },
-            minHeight: "500px",
-            borderRadius: "5px",
-            backgroundImage: `url(${bun})`,
-            backgroundAttachment: "fixed",
-            backgroundPosition: "100% 100%",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "auto",
-          }}
+          display={{ xs: "none", lg: "block" }}
+          sx={styles.petsImgBox}
         ></Box>
       </Box>
     </Box>
@@ -155,5 +58,33 @@ const styles = {
     minHeight: "600px",
     borderRadius: "5px",
   },
-  faqImageBox: {},
+  faqContainer: {
+    display: "flex",
+    flexDirection: { xs: "column", lg: "row" },
+    width: "80%",
+    marginTop: "1%",
+    gap: "1%",
+  },
+  cwmImgBox: {
+    width: { sm: "100%", lg: "50%" },
+    borderRadius: "5px",
+    backgroundColor: "background.paper",
+    minHeight: "300px",
+    backgroundImage: `url(${cwmImg})`,
+    backgroundAttachment: "fixed",
+    backgroundPosition: { xs: "47% 40%", lg: "200% 30%" },
+    backgroundRepeat: "no-repeat",
+    backgroundSize: { xs: "700px", sm: "800px", md: "auto" },
+  },
+  petsImgBox: {
+    width: { sm: "100%", lg: "50%" },
+    backgroundColor: "background.paper",
+    minHeight: "500px",
+    borderRadius: "5px",
+    backgroundImage: `url(${bun})`,
+    backgroundAttachment: "fixed",
+    backgroundPosition: "100% 100%",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "auto",
+  },
 };
