@@ -19,16 +19,16 @@ export const Home = () => {
         </Typography>
         <Box sx={styles.homeBox}>
           <Typography>
-            Construction of Carlswald Manor started on [date] and completed on
-            [date]. With a total of [number] units. It's the perfect place to
-            call home or have an investment propery. Trafalgar property
-            management is responsible for managing the property and will be the
-            primary contact point for residents if they have queries.
+            With a total of 85 units. It's the perfect place to call home or
+            have an investment propery. Trafalgar property management is
+            responsible for managing the property and will be the primary
+            contact point for residents should they have queries.
           </Typography>
           <Typography>
-            Carlswald Manor is pet friendly, pet owners need only register them
-            with the trustees. Residents are held responsible for the care of
-            said pet.
+            Carlswald Manor is pet friendly, within reason, pet owners need only
+            register them with the trustees. Residents are held responsible for
+            the care of said pet. Please check whether your pets are allowed
+            before moving in.
           </Typography>
           <Typography>
             Each unit is fitted with prepaid electricity that is mananged by
