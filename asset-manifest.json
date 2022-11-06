@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/CWMWebsite/static/css/main.073c9b0a.css",
+    "main.js": "/CWMWebsite/static/js/main.a219b08a.js",
+    "static/js/787.c31a1f23.chunk.js": "/CWMWebsite/static/js/787.c31a1f23.chunk.js",
+    "static/media/cwmImg.jpeg": "/CWMWebsite/static/media/cwmImg.0ac61921c18e88579e6b.jpeg",
+    "static/media/bun5.jpg": "/CWMWebsite/static/media/bun5.435c3a1e24fd5ad2cdb1.jpg",
+    "static/media/Trafalgar.jpg": "/CWMWebsite/static/media/Trafalgar.f4fb70f8febd862e742e.jpg",
+    "static/media/prestige.png": "/CWMWebsite/static/media/prestige.e280065214af82332ba7.png",
+    "index.html": "/CWMWebsite/index.html",
+    "main.073c9b0a.css.map": "/CWMWebsite/static/css/main.073c9b0a.css.map",
+    "main.a219b08a.js.map": "/CWMWebsite/static/js/main.a219b08a.js.map",
+    "787.c31a1f23.chunk.js.map": "/CWMWebsite/static/js/787.c31a1f23.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.a219b08a.js"
+  ]
+}
