@@ -39,7 +39,7 @@ export const Kalvest = () => {
             width: "40%",
           }}
         >
-          <Typography variant="h4">Kalvest</Typography>
+          <Typography variant="h4">Kallvest</Typography>
           <Typography variant="h6">Security</Typography>
           <Typography>
             Contact When: Noise complaints or security related queries

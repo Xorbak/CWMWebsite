@@ -83,8 +83,8 @@ const styles = {
     borderRadius: "5px",
     backgroundImage: `url(${bun})`,
     backgroundAttachment: "fixed",
-    backgroundPosition: "100% 100%",
+    backgroundPosition: { xs: "50% 0%", lg: "100% 100%" },
     backgroundRepeat: "no-repeat",
-    backgroundSize: "auto",
+    backgroundSize: { xs: "190%", lg: "auto" },
   },
 };

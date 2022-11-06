@@ -10,13 +10,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { NavLink } from "react-router-dom";
 import { NavItems } from "./navItems";
 
-const navArr = [
-  { location: "/emergencyContacts", label: "Emergency Contacts" },
-  { location: "/rules", label: "Rules" },
-  { location: "/faq", label: "FAQ" },
-  { location: "/clubhouse", label: "Clubhouse" },
-];
-
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null

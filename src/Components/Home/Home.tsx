@@ -20,7 +20,7 @@ export const Home = () => {
         <Box sx={styles.homeBox}>
           <Typography>
             With a total of 85 units. It's the perfect place to call home or
-            have an investment propery. Trafalgar property management is
+            have an investment property. Trafalgar property management is
             responsible for managing the property and will be the primary
             contact point for residents should they have queries.
           </Typography>
@@ -39,7 +39,7 @@ export const Home = () => {
             The saftey of our residents are our number one priority. Therefore
             we have 24/7 security with Kallvest that will manage the day to day
             security needs. For emergency situations BSS security will be
-            contacted for an armed response. More so, our electric perimiter
+            contacted for an armed response. More so, our electric perimeter
             fence immediately triggers an alarm when tampered with.
           </Typography>
           <Typography></Typography>

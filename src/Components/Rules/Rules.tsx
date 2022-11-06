@@ -122,7 +122,7 @@ export const Rules = () => {
 
 const styles = {
   ruleBox: {
-    marginY: "100px",
+    marginY: { xs: "40px", md: "70px", lg: "100px" },
     width: { xs: "90vw", md: "70vw", xl: "50vw" },
     minHeight: "500px",
     backgroundColor: "background.paper",
