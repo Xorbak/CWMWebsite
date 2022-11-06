@@ -69,9 +69,9 @@ const styles = {
   },
   paralaxImg: {
     backgroundImage: `url(${cwmImg})`,
-    minHeight: "400px",
+    height: { xs: "150px", sm: "200px" },
     backgroundAttachment: "fixed",
-    backgroundPosition: "center",
+    backgroundPosition: { xs: "50% 100%", sm: "center" },
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
   },
