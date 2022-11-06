@@ -1,10 +1,9 @@
 import Box from "@mui/material/Box";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import React, { useState } from "react";
+
+import { useState } from "react";
 import { GlobalStyles } from "../../App";
-import { CalendarPicker, PickersDay } from "@mui/x-date-pickers";
-import { Badge, Button, Grid, Typography } from "@mui/material";
+
+import { Grid, Typography } from "@mui/material";
 import { Calendar } from "./calendar";
 import { BookingDetails } from "./bookingDetails";
 

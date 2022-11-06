@@ -1,4 +1,5 @@
 {
+  "homepage": "http://dewaldstar.github.io/CWMWebsite",
   "name": "carlswald_manor",
   "version": "0.1.0",
   "private": true,
@@ -51,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-big-calendar": "^0.38.2"
+    "@types/react-big-calendar": "^0.38.2",
+    "gh-pages": "^4.0.0"
   }
 }
