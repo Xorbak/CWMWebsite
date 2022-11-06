@@ -5,7 +5,7 @@ import { GlobalStyles } from "../../App";
 import { RuleItem } from "./rule content/ruleItem";
 import cwmRules from "./cwmRules.json";
 import ListIcon from "@mui/icons-material/List";
-import MenuIcon from "@mui/icons-material/Menu";
+
 import React from "react";
 interface Rules {
   name: string;

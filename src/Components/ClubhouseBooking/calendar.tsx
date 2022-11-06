@@ -1,18 +1,10 @@
-import { ButtonUnstyled } from "@mui/base";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
-import {
-  add,
-  differenceInDays,
-  isToday,
-  setDate,
-  startOfMonth,
-  sub,
-} from "date-fns";
+import { add, setDate, startOfMonth, sub } from "date-fns";
 import { endOfMonth } from "date-fns/esm";
-import format from "date-fns/format";
+
 import React, { useEffect, useState } from "react";
 import { CalendarDays } from "./calanderDays";
 
@@ -29,8 +21,6 @@ const bookingUrl = "https://krat.es/3a8310ab084b44cb3984/clubhouse";
 export const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDay, setSelectedDay] = useState(new Date());
-  const startDate = startOfMonth(currentDate); //clean up
-  const endDate = endOfMonth(currentDate); //clean up
 
   const [booking, setBooking] = useState<BookingDetails[]>();
   const [loadingError, setLoadingError] = useState<boolean>(false);
@@ -51,11 +41,6 @@ export const Calendar = () => {
   const nextMonth = () => setCurrentDate(add(currentDate, { months: 1 }));
   const previousYear = () => setCurrentDate(sub(currentDate, { years: 1 }));
   const nextYear = () => setCurrentDate(add(currentDate, { years: 1 }));
-
-  const isSameDate = (day: Date, bookedDay: Date) =>
-    day.getDate() == bookedDay.getDate() &&
-    day.getMonth() == bookedDay.getMonth() &&
-    day.getFullYear() == bookedDay.getFullYear();
 
   const chooseDay = (index: number) => {
     const date = setDate(currentDate, index);

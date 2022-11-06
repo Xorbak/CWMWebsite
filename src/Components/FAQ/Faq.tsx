@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+
 import bun from "../../images/bun5.jpg";
 import cwmImg from "../../images/cwmImg.jpeg";
 import faq from "./faq.json";

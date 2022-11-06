@@ -8,8 +8,6 @@ import { Calendar } from "./calendar";
 import { BookingDetails } from "./bookingDetails";
 
 export const ClubhouseBookings = () => {
-  const [version, setVersion] = useState(false);
-
   return (
     <Box sx={GlobalStyles.App}>
       <Typography

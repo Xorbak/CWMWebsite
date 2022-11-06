@@ -4,13 +4,13 @@ import Typography from "@mui/material/Typography";
 import { differenceInDays, endOfMonth } from "date-fns";
 import setDate from "date-fns/setDate";
 import startOfMonth from "date-fns/startOfMonth";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BookingDetails } from "./calendar";
 
 const isSameDate = (day: Date, bookedDay: Date) =>
-  day.getDate() == bookedDay.getDate() &&
-  day.getMonth() == bookedDay.getMonth() &&
-  day.getFullYear() == bookedDay.getFullYear();
+  day.getDate() === bookedDay.getDate() &&
+  day.getMonth() === bookedDay.getMonth() &&
+  day.getFullYear() === bookedDay.getFullYear();
 
 interface Props {
   currentDate: Date;
