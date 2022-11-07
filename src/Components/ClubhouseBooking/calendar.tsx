@@ -4,10 +4,8 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/system/Box";
 import { add, setDate, startOfMonth, sub } from "date-fns";
 import { endOfMonth } from "date-fns/esm";
-
 import React, { useEffect, useState } from "react";
 import { CalendarDays } from "./calanderDays";
-
 import { DaysOfTheWeek } from "./daysOfTheWeek";
 import { Header } from "./header";
 
@@ -16,7 +14,7 @@ export interface BookingDetails {
   event: string;
 }
 
-const bookingUrl = "https://krat.es/3a8310ab084b44cb3984/clubhouse";
+const bookingUrl = `${process.env.REACT_APP_CALENDAR_API}`;
 
 export const Calendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());

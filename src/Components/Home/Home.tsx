@@ -42,7 +42,7 @@ export const Home = () => {
             contacted for an armed response. More so, our electric perimeter
             fence immediately triggers an alarm when tampered with.
           </Typography>
-          <Typography></Typography>
+          <Typography>{process.env.REACT_APP_TEST}</Typography>
         </Box>
       </Box>
     </Box>
