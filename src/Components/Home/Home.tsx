@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import { env } from "process";
 import { useEffect, useState } from "react";
 import cwmImg from "./cwmImg.jpeg";
 interface CartoonQuotes {
@@ -14,21 +15,31 @@ export const Home = () => {
   };
 
   const [quote, setQuote] = useState<CartoonQuotes[]>();
-  const [quoteNumber, setQuoteNumber] = useState<number>(getRandomInt(50));
+  const [quoteNumber, setQuoteNumber] = useState<number>(getRandomInt(48));
 
   const fetchCartoon = async () => {
-    await fetch("https://krat.es/6685b8328aa899faddec/cartoonQuotes?limit=100")
+    await fetch(`${process.env.REACT_APP_CARTOON_QUOTE}?limit=100`)
       .then((res) => res.json())
       .then((result) => {
+        //@ts-ignore if the result is not the same as what is in local storage overide localstoreage
+        result !== JSON.parse(localStorage.getItem("localQuotes")) &&
+          localStorage.setItem("localQuotes", JSON.stringify(result));
+        console.log("this is the results");
         console.log(result);
-        !quote && setQuote(result);
-        setQuoteNumber(getRandomInt(result.length));
-      });
+      })
+      .then(() => {}); //@ts-ignore
+    const localQuotes = JSON.parse(localStorage.getItem("localQuotes"));
+    setQuote(localQuotes);
   };
+  !quote && //@ts-ignore
+    JSON.parse(localStorage.getItem("localQuotes")) && //@ts-ignore
+    setQuote(JSON.parse(localStorage.getItem("localQuotes")));
+
   useEffect(() => {
     !quote && fetchCartoon();
   }, []);
 
+  console.log(quote);
   return (
     <Box>
       <Box sx={styles.paralaxImg}></Box>
@@ -73,7 +84,6 @@ export const Home = () => {
           </Box>
         </Box>
         <Box>
-          {" "}
           <Typography>{quote && quote[quoteNumber].quote}</Typography>
           <Typography variant="caption">
             -{quote && quote[quoteNumber].name} *
