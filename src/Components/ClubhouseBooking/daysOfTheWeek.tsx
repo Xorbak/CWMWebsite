@@ -9,7 +9,7 @@ export const DaysOfTheWeek = () => {
     <React.Fragment>
       {daysOfTheWeek.map((i) => {
         return (
-          <Grid xs={1} item>
+          <Grid key={i} xs={1} item>
             <Typography
               key={i}
               sx={{

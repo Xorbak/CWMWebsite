@@ -36,7 +36,7 @@ export const CalendarDays = ({
     <React.Fragment>
       {Array.from({ length: prefixDays }).map((_, index) => {
         return (
-          <Grid xs={1}>
+          <Grid key={index} item xs={1}>
             <Typography
               sx={{
                 display: "flex",
@@ -70,7 +70,7 @@ export const CalendarDays = ({
             }
           });
         return (
-          <Grid sx={{}} xs={1}>
+          <Grid item key={index} sx={{}} xs={1}>
             <Grid
               sx={{
                 borderBottom: "1px solid",
@@ -84,7 +84,7 @@ export const CalendarDays = ({
               }}
               container
             >
-              <Grid xs={8}>
+              <Grid item xs={8}>
                 <Typography
                   onClick={() => {
                     chooseDay(index + 1);
@@ -101,7 +101,7 @@ export const CalendarDays = ({
                   {index + 1}
                 </Typography>
               </Grid>{" "}
-              <Grid xs={4}>
+              <Grid item xs={4}>
                 <Box
                   sx={{
                     height: "10px",
@@ -119,7 +119,7 @@ export const CalendarDays = ({
       })}
       {Array.from({ length: sufixDays }).map((_, index) => {
         return (
-          <Grid xs={1}>
+          <Grid item key={index} xs={1}>
             <Typography
               sx={{
                 display: "flex",

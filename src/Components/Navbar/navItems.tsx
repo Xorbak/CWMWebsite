@@ -19,6 +19,7 @@ export const NavItems = ({ handleCloseNavMenu }: Props) => {
           { location, label } //bigger screens
         ) => (
           <NavLink
+            key={label}
             style={{
               textDecoration: "none",
             }}

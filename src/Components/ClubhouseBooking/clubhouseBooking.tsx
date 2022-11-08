@@ -16,7 +16,7 @@ export const ClubhouseBookings = () => {
       >
         Carlswald manor Clubhouse
       </Typography>
-      <Grid container xs={12} justifyContent="center">
+      <Grid container item xs={12} justifyContent="center">
         <Grid item xs={11} lg={6} xl={10}>
           <BookingDetails />
         </Grid>
