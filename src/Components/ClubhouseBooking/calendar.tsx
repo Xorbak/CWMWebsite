@@ -33,7 +33,7 @@ export const Calendar = () => {
         .catch(() => setLoadingError(true));
     };
     getBookings();
-  });
+  }, []);
 
   const previousMonth = () => setCurrentDate(sub(currentDate, { months: 1 }));
   const nextMonth = () => setCurrentDate(add(currentDate, { months: 1 }));
